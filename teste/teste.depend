@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1650917977 source:c:\users\ana\desktop\scripts c\teste\main.c
+	<stdio.h>
+
+1650917839 source:c:\users\ana\desktop\scripts c\teste\insere_idade.c
+	<stdio.h>
+

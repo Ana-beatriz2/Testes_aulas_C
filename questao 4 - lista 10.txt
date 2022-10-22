@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct Aluno{
+    int matricula;
+    char nome[31];
+    float nota1, nota2, nota3;
+};
+
+int main(){
+
+    int i;
+    float maior_primeira, maior_geral, menor_geral, media;
+    char nome_maior_primeira[31], nome_maior_geral[31], nome_menor_geral[31];
+    struct Aluno alunos[5];
+
+    for (i = 0; i < 5; i++){
+        printf("\n=============================\nALUNO %d\n=============================\n", i+1);
+
+        setbuf(stdin, NULL);
+
+        printf("Insira o nome: ");
+        gets(alunos[i].nome);
+
+        printf("Insira o numero de matricula: ");
+        scanf("%d", &alunos[i].matricula);
+
+       printf("Insira a primeira nota: ");
+       scanf("%f", &alunos[i].nota1);
+
+       printf("Insira a segunda nota: ");
+       scanf("%f", &alunos[i].nota2);
+
+       printf("Insira a terceira nota: ");
+       scanf("%f", &alunos[i].nota3);
+
+       media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+
+       if (i == 0){
+            maior_primeira = alunos[i].nota1;
+            strcpy(nome_maior_primeira, alunos[i].nome);
+            maior_geral = media;
+            strcpy(nome_maior_geral, alunos[i].nome);
+            menor_geral = media;
+            strcpy(nome_menor_geral, alunos[i].nome);
+       }
+       else{
+            if (alunos[i].nota1 > maior_primeira){
+                maior_primeira = alunos[i].nota1;
+                strcpy(nome_maior_primeira, alunos[i].nome);
+            }
+            if (media > maior_geral){
+                maior_geral = media;
+                strcpy(nome_maior_geral, alunos[i].nome);
+            }
+            if (media < menor_geral){
+                menor_geral = media;
+                strcpy(nome_menor_geral, alunos[i].nome);
+            }
+       }
+
+        printf("\nCom media %.1f: ", media);
+
+       if (media >= 6){
+        printf("\nAprovado!\n");
+       }
+       else{
+        printf("\nReprovado!\n");
+       }
+    }
+
+    printf("\nRELATORIO\n");
+
+    printf("\nA maior nota da primeira prova foi %.1f do(a) %s.\n", maior_primeira, nome_maior_primeira);
+    printf("\nA maior media geral foi %.1f do(a) %s.\n", maior_geral, nome_maior_geral);
+    printf("\nA menor media geral foi %.1f do(a) %s.\n", menor_geral, nome_menor_geral);
+
+    return 0;
+}

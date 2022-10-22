@@ -1,0 +1,5 @@
+seu nome eh:lara 
+sua idade eh:65 
+sua altura eh:1.67 
+seu peso eh:57 
+seu imc eh:

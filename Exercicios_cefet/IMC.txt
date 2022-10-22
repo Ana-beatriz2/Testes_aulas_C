@@ -1,0 +1,5 @@
+Nome: Ana Beatri\
+Idade: 12
+Altura: 1.68
+Peso: 76.00
+IMC: 26.93
